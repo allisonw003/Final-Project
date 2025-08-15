@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QRadioButton
 from gui import Ui_MainWindow
 from quiz_data import get_questions
 from typing import Optional
-from logic import Player, QuizManager, get_rank  # use my OOP classes here
+from logic import Player, QuizManager, get_rank  #i use my OOP classes here
 
 import sys
 import csv
@@ -56,7 +56,7 @@ class QuizApp(QMainWindow):
         try:
             age = int(age_text)
             if age < 1 or age > 120:
-                QMessageBox.warning(self, "Input Error", "Please enter a valid age (1–120)!")
+                QMessageBox.warning(self, "Input Error", "Please enter a valid age!")
                 return
         except ValueError:
             QMessageBox.warning(self, "Input Error", "Your age must be a number!")
