@@ -8,7 +8,7 @@ from logic import Player, QuizManager, get_rank  #i use my OOP classes here
 import sys
 import csv
 import os
-
+#REF 3, and #1
 # my the main window class for the quiz application
 #########Reference NUMBER 4 !!! !
 
@@ -110,7 +110,7 @@ class QuizApp(QMainWindow):
 
         # update the "Question X of Y" label
         self.update_question_counter()
-
+###5
     def update_question_counter(self) -> None:
         """Update the top label to show 'Question X of Y'."""
         total: int = len(self.quiz_manager.questions)
@@ -170,7 +170,7 @@ class QuizApp(QMainWindow):
 
         # use shared rank logic
         rank = get_rank(self.score)
-
+###5
         # guard for player being None (shouldn't happen if start_quiz ran)
         pname = self.player.name if self.player else ""
         page = str(self.player.age) if self.player else ""
@@ -340,8 +340,8 @@ if __name__ == "__main__":
 # window.show()
 #
 # app.exec()
-#https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/
 
+######5
 # https://stackoverflow.com/questions/65152659/in-pyqt-why-somes-widgets-needs-the-self-parameter-before-calling-them-while
 # import sys
 #
