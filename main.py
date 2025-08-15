@@ -11,27 +11,6 @@ import os
 
 # my the main window class for the quiz application
 #########Reference NUMBER 4 !!! !
-# class MainWindow(QMainWindow):
-#     def __init__(self):
-#         super().__init__()
-#
-#         self.setWindowTitle("My App")
-#
-#         button = QPushButton("Press Me!")
-#
-#         self.setFixedSize(QSize(400, 300))
-#
-#         # Set the central widget of the Window.
-#         self.setCentralWidget(button)
-#
-#
-# app = QApplication(sys.argv)
-#
-# window = MainWindow()
-# window.show()
-#
-# app.exec()
-#https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/
 
 class QuizApp(QMainWindow):
     """Main window for the quiz: screens, validation, navigation, and CSV saving."""
@@ -339,3 +318,24 @@ if __name__ == "__main__":
 
 #4
 # https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/
+# class MainWindow(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#
+#         self.setWindowTitle("My App")
+#
+#         button = QPushButton("Press Me!")
+#
+#         self.setFixedSize(QSize(400, 300))
+#
+#         # Set the central widget of the Window.
+#         self.setCentralWidget(button)
+#
+#
+# app = QApplication(sys.argv)
+#
+# window = MainWindow()
+# window.show()
+#
+# app.exec()
+#https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/
