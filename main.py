@@ -101,6 +101,8 @@ class QuizApp(QMainWindow):
 #WRONG
         # for btn in self.findChildren(QRadioButton):
         #     btn.setChecked(False)
+
+
         for button in self.findChildren(QRadioButton):
             button.setAutoExclusive(False)   #temporarily allowing unchecking
             button.setChecked(False)       # uncheck all the radiobuttons
