@@ -5,14 +5,14 @@ import csv
 class Player:
     """Holds one quiz player and score."""
     def __init__(self, name: str, age: int, years_watched: str):
-# to save the player's name, age, and how long they’ve watched SpongeBob
+"""Initialize instance attributes."""
         self.name = name
         self.age = age
         self.years_watched = years_watched
         self.score: int = 0
 
     def add_point(self) -> None:
-        """Add 1 point."""
+        """Will add 1 point."""
         self.score += 1
 
     def get_result_row(self) -> List[str]:

@@ -1,4 +1,4 @@
-"""PyQt6 GUI for the SpongeBob quiz: collects player info, runs the quiz, saves results."""
+"""PyQt6 GUI for the SpongeBob quiz so it collects player info, runs the quiz, saves results."""
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QRadioButton
 from gui import Ui_MainWindow
 from quiz_data import get_questions
@@ -10,6 +10,29 @@ import csv
 import os
 
 # my the main window class for the quiz application
+#########Reference NUMBER 4 !!!
+# class MainWindow(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#
+#         self.setWindowTitle("My App")
+#
+#         button = QPushButton("Press Me!")
+#
+#         self.setFixedSize(QSize(400, 300))
+#
+#         # Set the central widget of the Window.
+#         self.setCentralWidget(button)
+#
+#
+# app = QApplication(sys.argv)
+#
+# window = MainWindow()
+# window.show()
+#
+# app.exec()
+#https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/
+
 class QuizApp(QMainWindow):
     """Main window for the quiz: screens, validation, navigation, and CSV saving."""
     def __init__(self) -> None:
@@ -68,7 +91,6 @@ class QuizApp(QMainWindow):
         self.player = Player(name, age, watch_time)
         self.score = 0
         self.quiz_manager.reset()
-
         # Hide the input form and show the quiz section
         self.ui.playerGroupBox.hide()
         self.ui.groupBox.show()
@@ -79,7 +101,7 @@ class QuizApp(QMainWindow):
 
     def load_question(self) -> None:
         """Load the current question into the UI."""
-        # if somehow there are no questions, bail gracefully
+        # if somehow theres no questions it will quit nicely
         if not self.quiz_manager.questions:
             QMessageBox.critical(self, "Error", "No questions found.")
             return
@@ -88,7 +110,7 @@ class QuizApp(QMainWindow):
         q = self.quiz_manager.get_current_question()
         self.ui.questionLabel.setText(q.text)
 
-        # Set each radio button with one of the answer choices
+        # i set each radio button with one of the answer choices
         self.ui.radioButton1.setText(q.choices[0])
         self.ui.radioButton2.setText(q.choices[1])
         self.ui.radioButton3.setText(q.choices[2])
@@ -97,10 +119,13 @@ class QuizApp(QMainWindow):
         # https://stackoverflow.com/questions/62396153/toggling-a-qradiobutton-in-pyqt5-uncheck-when-a-checked-radio-button-is-clicked
         # BOTTOM (2)
         # Reset the radio buttons (so none are selected)
+#WRONG
+        # for btn in self.findChildren(QRadioButton):
+        #     btn.setChecked(False)
         for button in self.findChildren(QRadioButton):
-            button.setAutoExclusive(False)   # temporarily allowing unchecking
-            button.setChecked(False)         # uncheck all the radiobuttons
-            button.setAutoExclusive(True)    # restoring exclusivity (only one checked at a time)
+            button.setAutoExclusive(False)   #temporarily allowing unchecking
+            button.setChecked(False)       # uncheck all the radiobuttons
+            button.setAutoExclusive(True)    # restoring exclusivity so only one checked at a time
 
         # update the "Question X of Y" label
         self.update_question_counter()
@@ -299,8 +324,6 @@ if __name__ == "__main__":
 #             self.sender().setAutoExclusive(False)
 #             self.sender().setChecked(False) # This is not working, as it fires on the first click
 #             self.sender().setAutoExclusive(True)
-#
-#
 # if __name__ == '__main__':
 #     app = QApplication(sys.argv)
 #     window = MainWindow()
@@ -312,3 +335,7 @@ if __name__ == "__main__":
 
 
 #pyuic6 sponge_quiz.ui -o gui.py
+
+
+#4
+# https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/
