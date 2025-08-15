@@ -81,7 +81,7 @@ def save_to_csv(row: List[str], filename: str = "quiz_results.csv") -> None:
         with open(filename, "a", newline="") as file:
             writer = csv.writer(file)
             if not file_exists:
-                writer.writerow(["Name", "Age", "Years Watched", "Score", "Rank"])
+                writer.writerow(["Name", "Age", "Years-Watched", "Score", "Rank"])
             writer.writerow(row)
     except Exception as e:
         print("Error saving quiz result:", e)
