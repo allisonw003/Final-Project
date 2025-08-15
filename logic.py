@@ -77,10 +77,13 @@ def get_rank(score: int) -> str:
 def save_to_csv(row: List[str], filename: str = "quiz_results.csv") -> None:
     """Append one row to CSV."""
     try:
-        with open(filename, "a", newline="", encoding="utf-8") as file:
+        file_exists = os.path.isfile(filename) and os.path.getsize(filename) > 0
+        with open(filename, "a", newline="") as file:
             writer = csv.writer(file)
+            if not file_exists:
+                writer.writerow(["Name", "Age", "Years Watched", "Score", "Rank"])
             writer.writerow(row)
-    except OSError as e:
+    except Exception as e:
         print("Error saving quiz result:", e)
 
 class TimedQuizManager(QuizManager):
