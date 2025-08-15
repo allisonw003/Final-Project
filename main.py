@@ -55,7 +55,7 @@ class QuizApp(QMainWindow):
         # Validate that age is a positive integer, not zero and not a number
         try:
             age = int(age_text)
-            if age < 1 or age > 120:
+            if age < 1:
                 QMessageBox.warning(self, "Input Error", "Please enter a valid age!")
                 return
         except ValueError:
