@@ -341,3 +341,78 @@ if __name__ == "__main__":
 #
 # app.exec()
 #https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/
+
+# https://stackoverflow.com/questions/65152659/in-pyqt-why-somes-widgets-needs-the-self-parameter-before-calling-them-while
+# import sys
+#
+# from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton
+# from PyQt5.QtCore import Qt
+#
+#
+# class EntryWindow(QWidget):  # Inherits QWidget
+#
+#
+# def __init__(self):  # Constructor
+#     super().__init__()  # Initializer which calls constructor for QWidget
+#
+#     self.initializeUI()  # Call function used to set up window
+#
+#
+# def initializeUI(self):
+#     """
+#     Initialize the window and display its contents to the screen
+#     """
+#     self.setGeometry(400, 300, 400, 200)
+#     self.setWindowTitle('QLineEdit Widget')
+#     self.displayWidgets()
+#
+#     self.show()  # Show everything
+#
+#
+# def displayWidgets(self):
+#     '''
+#     Setup the QLineEdit and other widgets.
+#     '''
+#     # Create name label and line edit widgets
+#     QLabel("Please enter your name below.", self).move(100, 20)
+#     name_label = QLabel("Name:", self)
+#     name_label.move(55, 70)
+#
+#     self.name_entry = QLineEdit(self)
+#     self.name_entry.move(120, 68)
+#     self.name_entry.resize(200, 25)  # Change size of entry field
+#
+#     self.name_entry.setAlignment(Qt.AlignLeft)  # The default alignment
+#
+#     text_font = self.name_entry.font()  # Get font option from the Qlineedit
+#     text_font.setPointSize(12)  # Modify font size
+#     # text_font.setBold(True)           # Bold
+#     self.name_entry.setFont(text_font)  # Apply font
+#
+#     self.clear_button = QPushButton('Clear text', self)
+#     self.clear_button.clicked.connect(self.clearEntries)
+#     self.clear_button.move(120, 130)
+#
+#     self.exit_button = QPushButton("Exit", self)
+#     self.exit_button.clicked.connect(self.exitApplication)
+#     self.exit_button.move(240, 130)
+#
+#
+# def clearEntries(self):
+#     sender = self.sender()
+#     if sender.text() == 'Clear text':
+#         self.name_entry.clear()
+#
+#
+# def exitApplication(self):
+#     sender = self.sender()
+#     if sender.text() == "Exit":
+#         self.close()  # Close the window
+#
+#     # Run program
+#
+#
+# if __name__ == '__main__':
+#     app = QApplication(sys.argv)
+#     window = EntryWindow()
+#     sys.exit(app.exec_())
