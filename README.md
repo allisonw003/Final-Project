@@ -22,10 +22,10 @@ How to Run..
 9)take quiz 
 
 REQUIRED CODE FOR THIS PROJECT IS ONLY...
-main.py 
-gui.py 
-logic.py 
-quiz_data.py 
+main.py,
+gui.py ,
+logic.py,
+quiz_data.py,
 
 Files in This Project.....
 main.py : This starts the app and then connects the GUI to logic and handles validation and it saves your results.
