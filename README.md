@@ -21,6 +21,12 @@ How to Run..
 8)python main.py
 9)take quiz 
 
+REQUIRED CODE FOR THIS PROJECT IS ONLY...
+main.py 
+gui.py 
+logic.py 
+quiz_data.py 
+
 Files in This Project.....
 main.py : This starts the app and then connects the GUI to logic and handles validation and it saves your results.
 logic.py : Contains OOP classes like Player, Question, QuizManager, TimedQuizManage and ranking logic, and CSV.
